@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../CSS/Search.css'
 
 function Search() {
 
@@ -15,10 +16,10 @@ function Search() {
 
 
     return (
-        <div>
-            <form action="" onSubmit={submit} >
-                <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search user" />
-                <button>Search</button>
+        <div className="search__container">
+            <form action="" onSubmit={submit} className="search__form" >
+                <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search user" className="search__input" />
+                <button className="search__button" disabled={!query} >Search</button>
             </form>
         </div>
     )
