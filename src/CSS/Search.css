@@ -9,6 +9,8 @@
     align-items: center;
     background-color: #fff;
     border-radius: 10px;
+    border: 1px solid #c7d8f6;
+    box-shadow: 2px 2px 12px rgba(0, 0, 255, 0.08);
 }
 
 .search__input{
@@ -42,5 +44,6 @@
 }
 
 .search__button:disabled{
-    background-color: #92b7fd;
+    /* background-color: #92b7fd; */
+    background-color: #0e48b571;
 }
