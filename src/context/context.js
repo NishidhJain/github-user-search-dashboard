@@ -7,13 +7,16 @@ const url = 'https://api.github.com';
 
 const GithubContext = createContext();
 
-const [user, setUser] = useState(DefaultUser);
-const [repos, setRepos] = useState(DefaultRepos);
-const [followers, setFollowers] = useState(DefaultFollowers);
+
 
 const GithubProvider = ({ children }) => {
+
+    const [user, setUser] = useState(DefaultUser);
+    const [repos, setRepos] = useState(DefaultRepos);
+    const [followers, setFollowers] = useState(DefaultFollowers);
+
     return (
-        <GithubContext.Provider value={{ user }}>
+        <GithubContext.Provider value={{ user, repos, followers }}>
             {children}
         </GithubContext.Provider>
     );

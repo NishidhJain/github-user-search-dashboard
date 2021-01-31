@@ -1,11 +1,16 @@
 import './App.css';
+import Info from './components/Info';
 import Search from './components/Search'
+import { GithubProvider } from './context/context';
 
 function App() {
   return (
     <div className="App">
       <h1>Github User Dashboard</h1>
-      <Search />
+      <GithubProvider>
+        <Search />
+        <Info />
+      </GithubProvider>
     </div>
   );
 }
