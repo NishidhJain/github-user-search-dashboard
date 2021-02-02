@@ -5,6 +5,11 @@
   margin: 0 auto;
 }
 
+.app__title{
+  text-align: center;
+  padding: 10px;
+  color: rgb(6, 6, 141);
+}
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;

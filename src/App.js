@@ -7,7 +7,7 @@ import { GithubProvider } from './context/context';
 function App() {
   return (
     <div className="App">
-      <h1>Github User Dashboard</h1>
+      <h1 className="app__title">Github User Dashboard</h1>
       <GithubProvider>
         <Search />
         <Info />
