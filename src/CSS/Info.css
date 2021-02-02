@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: space-between;
     border-radius: 5px;
-    min-width: 16%;
+    min-width: 13%;
     box-shadow: 2px 2px 12px rgba(0, 0, 255, 0.15);
 }
 
@@ -23,6 +23,7 @@
 
 .info__number{
     margin: 0;
+    text-align: center;
 }
 
 .info__name{

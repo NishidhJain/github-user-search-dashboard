@@ -1,6 +1,7 @@
 import './App.css';
-import Info from './components/Info';
 import Search from './components/Search'
+import Info from './components/Info';
+import User from './components/User'
 import { GithubProvider } from './context/context';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <GithubProvider>
         <Search />
         <Info />
+        <User />
       </GithubProvider>
     </div>
   );

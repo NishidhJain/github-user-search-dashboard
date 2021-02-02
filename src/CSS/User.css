@@ -1,0 +1,91 @@
+.user{
+    margin-top: 80px;
+    width: 40%;
+    background-color: #fff;
+    position: relative;
+    padding: 20px 15px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 255, 0.15);
+    border: 1px solid #c7d8f6;
+}
+.user::before{
+    content: 'User';
+    position: absolute;
+    top: 0;
+    left: -1px;
+    padding: 5px 20px;
+    height: 30px;
+    transform: translateY(-100%);
+    font-weight: 600;
+    background-color: #fff;
+    border: 1px solid #c7d8f6;
+    border-bottom: none;
+}
+
+.user__top{
+    display: flex;
+    align-items: center;
+}
+
+.user__avatar{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #4fc5f8;
+    padding: 3px;
+}
+
+.user__detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.user__name{
+    margin: 0;
+    font-size: 1.2rem;
+    margin-left: 8px;
+}
+
+.user__twitterHandle{
+    margin: 0;
+}
+
+.user__follow{
+    margin-right: 10px;
+    text-decoration: none;
+    border: 2px solid #4fc5f8;
+    padding: 6px 20px;
+    border-radius: 50px;
+    color: #4fc5f8;
+    font-weight: 600;
+    outline: none;
+}
+
+.user__bottom{
+    margin-left: 10px;
+}
+
+.user__bio{
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.user__moreDetail{
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.user__icon{
+    font-size: 1.05rem;
+}
+
+.user__company, .user__location{
+    margin: 0;
+    margin-left: 10px;
+    /* font-size: 1.05rem; */
+}
+
+
