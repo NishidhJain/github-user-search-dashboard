@@ -1,5 +1,6 @@
 .user{
     margin-top: 80px;
+    min-width: 315px;
     width: 40%;
     background-color: #fff;
     position: relative;
@@ -12,8 +13,7 @@
     position: absolute;
     top: 0;
     left: -1px;
-    padding: 5px 20px;
-    height: 30px;
+    padding: 8px 20px;
     transform: translateY(-100%);
     font-weight: 600;
     background-color: #fff;
@@ -53,6 +53,7 @@
 }
 
 .user__follow{
+    margin-left: 19px;
     margin-right: 10px;
     text-decoration: none;
     border: 2px solid #4fc5f8;
