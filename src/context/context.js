@@ -3,11 +3,9 @@ import DefaultUser from './DefaultUserData/DefaultUser'
 import DefaultFollowers from './DefaultUserData/DefaultFollowers'
 import DefaultRepos from './DefaultUserData/DefaultRepos'
 
-const url = 'https://api.github.com';
+const endURL = 'https://api.github.com';
 
 const GithubContext = createContext();
-
-
 
 const GithubProvider = ({ children }) => {
 
@@ -16,7 +14,7 @@ const GithubProvider = ({ children }) => {
     const [followers, setFollowers] = useState(DefaultFollowers);
 
     return (
-        <GithubContext.Provider value={{ user, repos, followers }}>
+        <GithubContext.Provider value={{ user, repos, followers, setUser }}>
             {children}
         </GithubContext.Provider>
     );
