@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import Doughnut2D from '../Charts/Doughnut2D';
 import Pie3D from '../Charts/Pie3D';
 import { GithubContext } from '../context/context';
 import '../CSS/Repos.css';
@@ -9,7 +10,7 @@ function Repos() {
 
     let languages = repos.reduce((total, currItem) => {
 
-        const { language } = currItem;
+        const { language, stargazers_count } = currItem;
 
         // check if the value of language is not null
         if (!language) {
@@ -18,10 +19,10 @@ function Repos() {
 
         //Calculate the number of repositries with particular language
         if (total[language]) {
-            total[language] = { ...total[language], value: total[language].value + 1 };
+            total[language] = { ...total[language], value: total[language].value + 1, stars: total[language].stars + stargazers_count };
         }
         else {
-            total[language] = { label: language, value: 1 };
+            total[language] = { label: language, value: 1, stars: stargazers_count };
         }
 
         return total;
@@ -29,24 +30,34 @@ function Repos() {
 
     // we have languages as object but we want it as an array
 
-    console.log(languages);
-
-    languages = Object.values(languages);
+    let mostUsedLanguage = Object.values(languages);
 
     // now we want to display top 5 languages only, so for that we have to sort the array and slice it
-
-    languages = languages.sort((a, b) => {
+    mostUsedLanguage = mostUsedLanguage.sort((a, b) => {
         return b.value - a.value;
     }).slice(0, 5);
 
-    console.log(languages);
+    console.log('mostUsed language', mostUsedLanguage);
+
+    // for stars
+    let mostStars = Object.values(languages).sort((a, b) => {
+        return b.stars - a.stars;
+    });
+
+    // change the 'value' key with value of stars
+    mostStars = mostStars.map((item) => {
+        return { ...item, value: 5 };
+    }).slice(0, 5);
+
+    console.log('most stars', mostStars);
 
     return (
         <div className="repos">
-            <Pie3D data={languages} />
+            <Pie3D data={mostUsedLanguage} />
             <div>
                 jashfj
             </div>
+            <Doughnut2D data={mostStars} />
         </div>
     )
 }
