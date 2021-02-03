@@ -3,6 +3,7 @@ import Search from './components/Search'
 import Info from './components/Info';
 import User from './components/User'
 import { GithubProvider } from './context/context';
+import Repos from './components/Repos';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Search />
         <Info />
         <User />
+        <Repos />
       </GithubProvider>
     </div>
   );
