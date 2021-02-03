@@ -1,0 +1,33 @@
+.repos{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 2rem;
+}
+
+.repos div{
+    width: 100% !important;
+    border:  1px solid #c7d8f6;
+    box-shadow: 2px 2px 12px rgba(0, 0, 255, 0.15);
+}
+
+.fusioncharts-container{
+    width: 100% !important;
+}
+
+.repos div span svg{
+    width: 100% !important;
+    
+}
+
+@media (max-width: 1050px){
+    .repos{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 810px){
+    .repos{
+        grid-template-columns: 1fr;
+    }
+}
