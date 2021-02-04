@@ -1,5 +1,6 @@
 .repos{
     margin-top: 50px;
+    margin-bottom: 70px;
     display: grid;
     grid-template-columns: 2fr 3fr;
     gap: 2rem;

@@ -1,4 +1,6 @@
 import React, { useContext } from 'react'
+import Bar3D from '../Charts/Bar3D';
+import Column3D from '../Charts/Column3D';
 import Doughnut2D from '../Charts/Doughnut2D';
 import Pie3D from '../Charts/Pie3D';
 import { GithubContext } from '../context/context';
@@ -46,18 +48,35 @@ function Repos() {
 
     // change the 'value' key with value of stars
     mostStars = mostStars.map((item) => {
-        return { ...item, value: 5 };
+        return { ...item, value: item.stars };
     }).slice(0, 5);
 
     console.log('most stars', mostStars);
 
+
+    // stars and forks
+    let { stars, forks } = repos.reduce((total, currItem) => {
+
+        let { stargazers_count, forks, name } = currItem;
+
+        total.stars[stargazers_count] = { label: name, value: stargazers_count };
+
+        total.forks[forks] = { label: name, value: forks };
+
+        return total;
+    }, { stars: {}, forks: {} });
+
+    stars = Object.values(stars).slice(-5).reverse();
+    forks = Object.values(forks).slice(-5).reverse();
+
+    console.log('stars', stars);
+
     return (
         <div className="repos">
             <Pie3D data={mostUsedLanguage} />
-            <div>
-                jashfj
-            </div>
+            <Column3D data={stars} />
             <Doughnut2D data={mostStars} />
+            <Bar3D data={forks} />
         </div>
     )
 }
