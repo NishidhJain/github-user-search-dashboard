@@ -6,26 +6,25 @@ import '../CSS/Search.css'
 
 function Search() {
 
-    const userURL = 'https://api.github.com/users/'
-
-    const { setUser } = useContext(GithubContext);
+    const { findGithubUser } = useContext(GithubContext);
     const [query, setQuery] = useState('');
 
-    const searchUser = async (searchUserName) => {
+    // const searchUser = async (searchUserName) => {
 
-        let searchQuery = userURL + searchUserName;
-        console.log(searchQuery);
-        let response = await fetch(searchQuery);
-        let res = await response.json();
-        setUser(res);
-        console.log(res);
-    }
+    //     let searchQuery = userURL + searchUserName;
+    //     console.log(searchQuery);
+    //     let response = await fetch(searchQuery);
+    //     let res = await response.json();
+    //     setUser(res);
+    //     console.log(res);
+    // }
 
     const handleSubmit = (e) => {
         // to stop page from refreshing
         e.preventDefault();
-        console.log(query);
-        searchUser(query);
+        // console.log(query);
+        // searchUser(query);
+        findGithubUser(query);
 
         // clear the input field
         setQuery('');
@@ -33,7 +32,7 @@ function Search() {
 
     return (
         <div className="search__container">
-            <form action="" onSubmit={handleSubmit} className="search__form" >
+            <form onSubmit={handleSubmit} className="search__form" >
                 <SearchIcon className="search__icon" />
                 <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search user" className="search__input" />
                 <button className="search__button" disabled={!query} type="submit">Search</button>
