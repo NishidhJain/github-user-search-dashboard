@@ -10,10 +10,10 @@ import FusionCharts from "fusioncharts";
 import Chart from "fusioncharts/fusioncharts.charts";
 
 // Step 5 - Include the theme as fusion
-import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
+import GammelTheme from "fusioncharts/themes/fusioncharts.theme.gammel";
 
 // Step 6 - Adding the chart and theme as dependency to the core fusioncharts
-ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
+ReactFC.fcRoot(FusionCharts, Chart, GammelTheme);
 
 
 function Doughnut2D({ data }) {
@@ -28,7 +28,7 @@ function Doughnut2D({ data }) {
             // Chart Configuration
             chart: {
                 caption: "Stars Per Language",    //Set the chart caption
-                theme: "fusion",             //Set the theme for your chart
+                theme: "gammel",             //Set the theme for your chart
                 doughnutRadius: '30%', // to increase the size
                 showPercentValues: 0,
             },
