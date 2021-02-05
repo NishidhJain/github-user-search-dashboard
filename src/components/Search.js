@@ -6,7 +6,7 @@ import '../CSS/Search.css'
 
 function Search() {
 
-    const { findGithubUser } = useContext(GithubContext);
+    const { findGithubUser, request } = useContext(GithubContext);
     const [query, setQuery] = useState('');
 
     // const searchUser = async (searchUserName) => {
@@ -40,6 +40,7 @@ function Search() {
                     Search
                 </Button> */}
             </form>
+            <h3>{`Requests Remaining : ${request} / hour`} </h3>
         </div>
     )
 }

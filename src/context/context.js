@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react'
+import React, { useState, createContext, useEffect } from 'react'
 import DefaultUser from './DefaultUserData/DefaultUser'
 import DefaultFollowers from './DefaultUserData/DefaultFollowers'
 import DefaultRepos from './DefaultUserData/DefaultRepos'
@@ -13,6 +13,19 @@ const GithubProvider = ({ children }) => {
     const [repos, setRepos] = useState(DefaultRepos);
     const [followers, setFollowers] = useState(DefaultFollowers);
     const [isLoading, setIsLoading] = useState(false);
+    const [request, setRequest] = useState(0);
+
+
+
+    const checkRequests = async () => {
+        await fetch(`${rootURL}/rate_limit`)
+            .then((response) => response.json())
+            .then((res) => setRequest(res.rate.remaining))
+            .catch((err) => console.log('err in getting remaining requests', err));
+
+    };
+
+    useEffect(checkRequests);
 
     const findGithubUser = async (userName) => {
         // console.log('findGithubUser');
@@ -25,7 +38,7 @@ const GithubProvider = ({ children }) => {
         await fetch(`${rootURL}/users/${userName}`)
             .then((response) => response.json())
             .then((res) => json_response = res)
-            .catch((err) => console.log('err in fetchong user', err));
+            .catch((err) => console.log('err in fetching user', err));
 
         console.log(json_response);
 
@@ -53,7 +66,7 @@ const GithubProvider = ({ children }) => {
 
 
     return (
-        <GithubContext.Provider value={{ user, repos, followers, findGithubUser, isLoading }}>
+        <GithubContext.Provider value={{ user, repos, followers, findGithubUser, isLoading, request }}>
             {children}
         </GithubContext.Provider>
     );
