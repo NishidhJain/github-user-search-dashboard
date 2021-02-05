@@ -25,13 +25,23 @@ const GithubProvider = ({ children }) => {
         await fetch(`${rootURL}/users/${userName}`)
             .then((response) => response.json())
             .then((res) => json_response = res)
-            .catch((err) => console.log('err'));
+            .catch((err) => console.log('err in fetchong user', err));
 
         console.log(json_response);
 
         if (json_response.login) {
+
+            let json_repo_response = {};
+
             console.log('User received');
             setUser(json_response);
+
+            await fetch(`${json_response.repos_url}?per_page=100`)
+                .then((res) => res.json())
+                .then((response) => json_repo_response = response)
+                .catch((err) => console.log('err in repo', err));
+
+            setRepos(json_repo_response);
         }
         else {
             console.log('err', json_response.message);
@@ -39,19 +49,7 @@ const GithubProvider = ({ children }) => {
 
         setIsLoading(false);
 
-
-        // try {
-        //     let searchUser = await fetch(`${endURL}/users/${userName}`);
-        //     let jsonData = await searchUser.json();
-        //     console.log(jsonData);
-        // }
-        // catch (err) {
-        //     console.log('err', err);
-        // }
-
-
     };
-
 
 
     return (
