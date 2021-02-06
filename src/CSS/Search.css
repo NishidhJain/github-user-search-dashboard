@@ -78,3 +78,9 @@
     color: #666;
     /* text-align: center; */
 }
+
+@media(max-width: 478px){
+    .requests{
+        font-size: 1.3rem;
+    }
+}

@@ -6,7 +6,7 @@ import '../CSS/Search.css'
 
 function Search() {
 
-    const { findGithubUser, request } = useContext(GithubContext);
+    const { findGithubUser, request, error } = useContext(GithubContext);
     const [query, setQuery] = useState('');
 
     // const searchUser = async (searchUserName) => {
@@ -31,17 +31,25 @@ function Search() {
     };
 
     return (
-        <div className="search__container">
-            <form onSubmit={handleSubmit} className="search__form" >
-                <SearchIcon className="search__icon" />
-                <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search user" className="search__input" />
-                <button className="search__button" disabled={!query} type="submit">Search</button>
-                {/* <Button variant="contained" color="primary" disabled={!query} className="search__btn" size="large" >
-                    Search
-                </Button> */}
-            </form>
-            <h3>{`Requests Remaining : ${request} / hour`} </h3>
+        <div className="search">
+            {
+                error.show && <p className="error__msg">{error.message}</p>
+            }
+            <div className="search__container">
+
+
+                <form onSubmit={handleSubmit} className="search__form" >
+                    <SearchIcon className="search__icon" />
+                    <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search user" className="search__input" />
+                    <button className="search__button" disabled={!query} type="submit">Search</button>
+                    {/* <Button variant="contained" color="primary" disabled={!query} className="search__btn" size="large" >
+                        Search
+                    </Button> */}
+                </form>
+                <p className="requests">{`Requests Remaining : ${request} / 60`} </p>
+            </div>
         </div>
+
     )
 }
 

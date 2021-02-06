@@ -8,7 +8,45 @@
 .app__title{
   text-align: center;
   padding: 10px;
-  color: rgb(6, 6, 141);
+  color: #06068D;
+}
+
+.loading{
+  font-size: 3.5rem;
+  text-align: center;
+  line-height: 310px;
+}
+
+
+.not-found{
+  margin-top: 50px;
+  width: 100%;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found__img{
+  max-width: 600px;
+  width: 90%;
+  object-fit: contain;
+}
+
+.error__msg{
+  color: crimson;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+@media(max-width: 458px){
+
+  .app__title{
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
 }
 /* .App-logo {
   height: 40vmin;
