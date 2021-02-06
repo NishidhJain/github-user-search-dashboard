@@ -77,4 +77,9 @@
     .info{
         justify-content: center;
     }
+    .info__container{
+        width: 70%;
+        margin-right: 0;
+        justify-content: space-evenly;
+    }
 }
