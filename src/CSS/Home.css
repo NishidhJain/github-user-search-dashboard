@@ -1,0 +1,35 @@
+.home{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home__img{
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+}
+
+.home__heading{
+    margin: 0;
+    color: #3434a3;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.home__description{
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: justify;
+    margin-top: 30px;
+    color: #06068ddc;
+}
+
+@media(max-width: 478px){
+    .home__description{
+        margin-top: 15px;
+        width: 100%;
+        padding: 10px;
+    }
+}

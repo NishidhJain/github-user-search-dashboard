@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import BusinessIcon from '@material-ui/icons/Business';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-// import LinkIcon from '@material-ui/icons/Link';
 import { GithubContext } from '../context/context'
 import '../CSS/User.css'
 

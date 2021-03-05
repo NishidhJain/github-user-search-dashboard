@@ -2,9 +2,6 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, 200px);
-    justify-content: space-between; */
     margin-top: 30px;
     width: 100%;
 }
@@ -23,10 +20,6 @@
     /* max-width: 200px; */
     box-shadow: 2px 2px 12px rgba(0, 0, 255, 0.15);
 }
-
-/* .info__container:last-child{
-    margin-right: 0;
-} */
 
 .info__icon{
     font-size: 1.8rem !important;

@@ -39,7 +39,7 @@ function Repos() {
         return b.value - a.value;
     }).slice(0, 5);
 
-    console.log('mostUsed language', mostUsedLanguage);
+    // console.log('mostUsed language', mostUsedLanguage);
 
     // for stars
     let mostStars = Object.values(languages).sort((a, b) => {
@@ -51,7 +51,7 @@ function Repos() {
         return { ...item, value: item.stars };
     }).slice(0, 5);
 
-    console.log('most stars', mostStars);
+    // console.log('most stars', mostStars);
 
 
     // stars and forks
@@ -69,7 +69,7 @@ function Repos() {
     stars = Object.values(stars).slice(-5).reverse();
     forks = Object.values(forks).slice(-5).reverse();
 
-    console.log('stars', stars);
+    // console.log('stars', stars);
 
     return (
         <div className="repos">

@@ -1,5 +1,4 @@
 import './App.css';
-
 import { GithubProvider } from './context/context';
 import Dashboard from './Dashboard';
 
