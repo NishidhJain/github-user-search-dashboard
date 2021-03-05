@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import Search from './components/Search'
-import Info from './components/Info';
-import User from './components/User'
-import Repos from './components/Repos';
-// import userNotFound from './notFound.svg';
 import userNotFound from './assets/404-Not-Found.svg';
 import { GithubContext } from "./context/context";
 import Home from './components/Home';
+const Info = lazy(() => import('./components/Info'));
+const User = lazy(() => import('./components/User'));
+const Repos = lazy(() => import('./components/Repos'));
+// import Info from './components/Info';
+// import User from './components/User'
+// import Repos from './components/Repos';
 
+const waitForSec = () => <p>Wait for some time...</p>;
 
 function Dashboard() {
 
@@ -23,9 +26,11 @@ function Dashboard() {
                     </div>
                 ) : (
                     <>
-                        <Info />
-                        <User />
-                        <Repos />
+                        <Suspense fallback={waitForSec()} >
+                            <Info />
+                            <User />
+                            <Repos />
+                        </Suspense>
                     </>
                 )
                 }

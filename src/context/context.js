@@ -14,6 +14,8 @@ const GithubProvider = ({ children }) => {
 
     const checkRequests = async () => {
 
+        console.log("check request called");
+
         try {
             const resp = await fetch(`${rootURL}/rate_limit`);
             const jsonResp = await resp.json();
